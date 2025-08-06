@@ -6,7 +6,7 @@ A minimal Flask-based word game where players must unscramble a jumbled 4-letter
 
 ## 🧠 How It Works
 
-- A random 4-letter English word is chosen from a curated word list.
+- A random English word is chosen from a curated word list.
 - The letters are shuffled and shown to the player.
 - The player has unlimited guesses to solve it.
 - Correct letters are revealed in-place after each guess.
