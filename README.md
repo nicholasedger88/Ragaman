@@ -6,7 +6,7 @@ A minimal Flask-based word game where players must unscramble a jumbled 4-letter
 
 ## 🧠 How It Works
 
-- A random 4-letter English word is chosen from a curated word list.
+- A random English word is chosen from a curated word list.
 - The letters are shuffled and shown to the player.
 - The player has unlimited guesses to solve it.
 - Correct letters are revealed in-place after each guess.
@@ -55,29 +55,9 @@ Ragaman/
 
 ---
 
-## 🌍 Deployment
-
-You can deploy this app on:
-
-- [Render](https://render.com/)
-- [Fly.io](https://fly.io/)
-- [Railway](https://railway.app/)
-- Or a basic VPS / shared hosting that supports Python
-
-Want help deploying? Just ask.
-
----
-
 ## ✨ Future Ideas
 
 - Add difficulty levels (3–6 letter words)
-- Limit guesses (like Wordle)
+- Limit guesses
 - Show definitions or hints
-- User login / high score board
-- "Give me a hint" button
-
----
-
-## 📜 License
-
-MIT — free to modify and share.
+- User login
