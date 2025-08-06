@@ -55,29 +55,9 @@ Ragaman/
 
 ---
 
-## 🌍 Deployment
-
-You can deploy this app on:
-
-- [Render](https://render.com/)
-- [Fly.io](https://fly.io/)
-- [Railway](https://railway.app/)
-- Or a basic VPS / shared hosting that supports Python
-
-Want help deploying? Just ask.
-
----
-
 ## ✨ Future Ideas
 
 - Add difficulty levels (3–6 letter words)
-- Limit guesses (like Wordle)
+- Limit guesses
 - Show definitions or hints
-- User login / high score board
-- "Give me a hint" button
-
----
-
-## 📜 License
-
-MIT — free to modify and share.
+- User login
