@@ -9,22 +9,31 @@
     </div>
 
     <form method="POST" class="mb-3 d-flex justify-content-center gap-2">
-        <input type="text" name="guess" class="form-control w-50" placeholder="Your guess" required>
+        <input type="text" name="guess" class="form-control w-50" placeholder="Your guess" required autocomplete="off">
         <button type="submit" class="btn btn-primary">Guess</button>
     </form>
 
     {% if feedback %}
-        <p><strong>{{ feedback }}</strong></p>
+        <p class="mt-3 fs-5"><strong>{{ feedback }}</strong></p>
     {% endif %}
 
-    {% if guess_history %}
-        <h5 class="mt-4">Previous Guesses:</h5>
-        <ul class="list-group">
-            {% for guess in guess_history %}
-                <li class="list-group-item"><code>{{ guess }}</code></li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+
+{% if guess_history %}
+    <h5 class="mt-4">Previous Guesses:</h5>
+    <ul class="list-group">
+        {% for guess in guess_history %}
+            <li class="list-group-item">
+                {% for letter, is_correct in guess %}
+                    {% if is_correct %}
+                        <strong style="color: green;">{{ letter }}</strong>
+                    {% else %}
+                        <span style="color: grey;">{{ letter }}</span>
+                    {% endif %}
+                {% endfor %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
 
     <form method="GET" action="/refresh">
         <button type="submit" class="btn btn-outline-secondary mt-3">🔄 Refresh Word</button>
