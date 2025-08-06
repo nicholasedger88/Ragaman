@@ -10,7 +10,7 @@
 
     <form method="POST" class="mb-3 d-flex justify-content-center gap-2">
         <input type="text" name="guess" class="form-control w-50" placeholder="Your guess" required autocomplete="off">
-        <button type="submit" class="btn btn-primary">Guess</button>
+        <!--<button type="submit" class="btn btn-primary">Guess</button>-->
     </form>
 
     {% if feedback %}
@@ -36,6 +36,6 @@
 {% endif %}
 
     <form method="GET" action="/refresh">
-        <button type="submit" class="btn btn-outline-secondary mt-3">🔄 Refresh Word</button>
+        <button type="submit" class="btn btn-outline-secondary mt-3">Refresh Word</button>
     </form>
 {% endblock %}

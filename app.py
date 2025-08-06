@@ -32,7 +32,7 @@ def index():
         if len(guess) != len(target_word):
             feedback = f"Please enter a {len(target_word)}-letter word."
         elif guess == target_word:
-            feedback = f"🎉 Correct! The word was: {target_word.upper()}"
+            feedback = f"Correct! The word was: {target_word}"
         else:
             styled = []
             for i in range(len(target_word)):
