@@ -8,7 +8,7 @@
     top: 0; left: 0; right: 0; bottom: 0;
     background: url('{{ url_for('static', filename=header_image) }}') no-repeat center top;
     background-size: cover;
-    opacity: 0.1;
+    opacity: 0.05;
     z-index: -1;
   }
 </style>
@@ -59,9 +59,9 @@
   {% endif %}
 
 {% if is_correct %}
-  <form method="GET" action="/refresh">
-      <button type="submit">Refresh Word</button>
-  </form>
+<form method="GET" action="{{ url_for('refresh') }}">
+    <button type="submit">Refresh Word</button>
+</form>
 {% endif %}
 
 </div>

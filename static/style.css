@@ -134,3 +134,45 @@ strong {
     border-left: 4px solid #28a745;
     font-weight: bold;
 }
+
+@media (max-width: 768px) {
+  body {
+    font-size: 95%;
+    margin-top: 40px;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  h1, .masthead-title h1 {
+    font-size: 2rem;
+  }
+
+  .header-masthead {
+    height: 200px;
+  }
+
+  .header-bg-img {
+    height: 200px;
+  }
+
+  .guess-box p,
+  .list-group-item,
+  input[type="text"] {
+    font-size: 1.1rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .masthead-title {
+    padding: 0 0.5rem;
+  }
+
+  .guess-box {
+    word-break: break-word;
+  }
+}
