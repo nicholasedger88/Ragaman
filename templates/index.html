@@ -25,10 +25,11 @@
       </div>
   </div>
 
-  <p>Unscramble this word:</p>
-  <div class="guess-box mb-3">
-      <p><strong>{{ jumbled }}</strong></p>
-  </div>
+<p class="instruction-text">Unscramble this word:</p>
+<div class="guess-box mb-3">
+    <p class="jumble-word"><strong>{{ jumbled }}</strong></p>
+</div>
+
 
   {% if not is_correct %}
     <form method="POST">

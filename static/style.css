@@ -1,178 +1,151 @@
 /* === Base === */
 body {
-    background-color: white;
-    font-family: Georgia, 'Times New Roman', serif;
-    color: #000;
-    margin-top: 20px;
-    background-attachment: fixed; /* optional */
-    padding-bottom: 2em;
+  background-color: white;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #000;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
 }
-
-/* === Typography === */
-h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-align: center;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 0.5rem;
-    margin-bottom: 2rem;
-    letter-spacing: 0.05em;
-}
-
-.masthead-title h1 {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 3rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    margin: 0;
-}
-
-p,
-li {
-    font-size: 1.5rem;
-    line-height: 1.6;
-    color: #111;
-}
-
-/* === Header Masthead === */
-
-/* === Faint full-background image === */
 
 .header-masthead {
-    position: relative;
-    width: 100%;
-    height: 200px; /* must match .header-bg-img and body::before */
-    overflow: hidden;
-    border-bottom: 1px solid #ccc;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
 }
 
 .header-bg-img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    display: block;
-    filter: brightness(75%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(75%);
 }
 
 .masthead-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    padding: 0 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
 }
 
-/* === Forms === */
-form {
-    margin-bottom: 1rem;
+.masthead-title h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-input[type="text"] {
-    width: 100%;
-    padding: 0.6rem;
-    font-size: 1.25rem;
-    font-family: monospace;
-    border: 1px solid #333;
-    border-radius: 4px;
-    outline: none;
-}
-
-/* === Buttons === */
-button {
-    background-color: #000;
-width: 30%;
-    color: white;
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    margin-top: 1rem;
-    border-radius: 0;
-    letter-spacing: 0.03em;
-}
-
-button:hover {
-    background-color: #444;
-}
-
-/* === Guess History === */
-.list-group-item {
-    font-family: monospace;
-    font-size: 1.25rem;
-    padding: 0.4rem;
-    border: none;
-    background-color: #f5f5f5;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
+p, li {
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .guess-box {
-    letter-spacing: 0.25em;
+  font-size: 1.25rem;
+  text-align: center;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.5rem;
 }
 
-/* === Misc === */
-code {
-    background: none;
-    font-size: 1.25rem;
+input[type="text"] {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1.25rem;
+  font-family: monospace;
+  border: 1px solid #333;
+  border-radius: 4px;
+  margin-bottom: 1rem;
 }
 
-strong {
-    font-weight: 700;
+button {
+  background-color: #000;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
 }
 
-.correct-guess {
-    background-color: #e6ffed;
-    border-left: 4px solid #28a745;
-    font-weight: bold;
+button:hover {
+  background-color: #333;
 }
 
-@media (max-width: 768px) {
-  body {
-    font-size: 95%;
-    margin-top: 40px;
-  }
+.list-group-item {
+  font-family: monospace;
+  font-size: 1.25rem;
+  padding: 0.6rem;
+  text-align: center;
+  background: #f5f5f5;
+  margin-bottom: 0.5rem;
+}
 
-  .container {
-    padding: 0 0.75rem;
-  }
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-  h1, .masthead-title h1 {
-    font-size: 2rem;
-  }
+.guess-row {
+  animation: fadeInUp 0.3s ease-out;
+}
 
-  .header-masthead {
-    height: 200px;
-  }
-
-  .header-bg-img {
-    height: 200px;
-  }
-
-  .guess-box p,
-  .list-group-item,
-  input[type="text"] {
-    font-size: 1.1rem;
-  }
-
-  button {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .masthead-title {
-    padding: 0 0.5rem;
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .masthead-title h1 {
+    font-size: 1.6rem;
   }
 
   .guess-box {
-    word-break: break-word;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+  }
+
+  input[type="text"],
+  button {
+    font-size: 1.1rem;
+  }
+
+  p, li {
+    font-size: 1rem;
+  }
+}
+
+.instruction-text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.jumble-word {
+  font-size: 2.25rem;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.25em;
+}
+
+/* Optional: adjust for mobile */
+@media (max-width: 600px) {
+  .instruction-text {
+    font-size: 1.3rem;
+  }
+
+  .jumble-word {
+    font-size: 2rem;
   }
 }
