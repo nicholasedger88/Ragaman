@@ -1,28 +1,51 @@
 {% extends "base.html" %}
 
+{% block head %}
+<style>
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('{{ url_for('static', filename=header_image) }}') no-repeat center top;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: -1;
+  }
+</style>
+{% endblock %}
+
+
 {% block content %}
-    <h1>Ragaman</h1>
+<div class="page-fade-in">
 
-    <p>Unscramble this word:</p>
-    <div class="guess-box mb-3">
-        <strong>{{ jumbled }}</strong>
-    </div>
+  <div class="header-masthead mb-5">
+      <img src="{{ url_for('static', filename=header_image) }}" alt="Rearranged header" class="header-bg-img">
+      <div class="masthead-title">
+          <h1>Rearranged</h1>
+      </div>
+  </div>
 
-    <form method="POST" class="mb-3 d-flex justify-content-center gap-2">
-        <input type="text" name="guess" class="form-control w-50" placeholder="Your guess" required autocomplete="off">
-        <!--<button type="submit" class="btn btn-primary">Guess</button>-->
+  <p>Unscramble this word:</p>
+  <div class="guess-box mb-3">
+      <p><strong>{{ jumbled }}</strong></p>
+  </div>
+
+  {% if not is_correct %}
+    <form method="POST">
+        <input type="text" name="guess" placeholder="Your guess" required autocomplete="off">
+        <button type="submit">Guess</button>
     </form>
+  {% endif %}
 
-    {% if feedback %}
-        <p class="mt-3 fs-5"><strong>{{ feedback }}</strong></p>
-    {% endif %}
+  {% if feedback %}
+      <p class="mt-3 fs-5"><strong>{{ feedback }}</strong></p>
+  {% endif %}
 
-
-{% if guess_history %}
-    <h5 class="mt-4">Previous Guesses:</h5>
-    <ul class="list-group">
+  {% if guess_history %}
+      <h5 class="mt-4">Previous Guesses:</h5>
+        <ul class="list-group">
         {% for guess in guess_history %}
-            <li class="list-group-item">
+            <li class="list-group-item guess-row {% if loop.index0 == 0 and is_correct %}correct-guess{% endif %}">
                 {% for letter, is_correct in guess %}
                     {% if is_correct %}
                         <strong style="color: green;">{{ letter }}</strong>
@@ -32,10 +55,14 @@
                 {% endfor %}
             </li>
         {% endfor %}
-    </ul>
+        </ul>
+  {% endif %}
+
+{% if is_correct %}
+  <form method="GET" action="/refresh">
+      <button type="submit">Refresh Word</button>
+  </form>
 {% endif %}
 
-    <form method="GET" action="/refresh">
-        <button type="submit" class="btn btn-outline-secondary mt-3">Refresh Word</button>
-    </form>
+</div>
 {% endblock %}
